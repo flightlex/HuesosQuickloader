@@ -1,3 +1,3 @@
 # HuesosQuickloader
 
-[![Showcase](https://github.com/flightlex/HuesosQuickloader/blob/master/Docs/thumbnail.png?raw=true)]
+![Super usefull i know](https://github.com/flightlex/HuesosQuickloader/blob/master/Docs/thumbnail.png?raw=true)
