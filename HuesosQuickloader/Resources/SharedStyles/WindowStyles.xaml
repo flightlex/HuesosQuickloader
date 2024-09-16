@@ -1,0 +1,21 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style
+        x:Key="CaptionlessRoundWindowStyle"
+        TargetType="{x:Type Window}">
+
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome
+                    CaptionHeight="0"
+                    CornerRadius="16"
+                    GlassFrameThickness="0"
+                    ResizeBorderThickness="6" />
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+</ResourceDictionary>

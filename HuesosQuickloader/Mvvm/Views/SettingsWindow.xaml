@@ -1,0 +1,72 @@
+﻿<Window
+    x:Class="HuesosQuickloader.Mvvm.Views.SettingsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:HuesosQuickloader.Mvvm.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:HuesosQuickloader.Mvvm.ViewModels"
+    Title="Settings"
+    Width="600"
+    Height="350"
+    d:DataContext="{d:DesignInstance Type=viewmodels:SettingsViewModel}"
+    Background="{StaticResource SettingsWindowBackgroundColorBrush}"
+    ResizeMode="NoResize"
+    Style="{StaticResource CaptionlessRoundWindowStyle}"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+
+    <Grid Margin="20">
+
+        <!--  Post Download  -->
+        <StackPanel
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+
+            <!--  Caption  -->
+            <TextBlock
+                FontSize="20"
+                Text="Post-Download Behavior" />
+
+            <Border
+                Height="1"
+                Background="#FFFFFF"
+                Opacity="0.5" />
+
+            <!--  Open File Location  -->
+            <CheckBox
+                Margin="0,10,0,0"
+                Content="Open file location"
+                FontSize="14"
+                IsChecked="{Binding CurrentConfig.OpenFileWhenDownloaded}" />
+
+            <!--  Message  -->
+            <CheckBox
+                Margin="0,10,0,0"
+                Content="Inform when finished"
+                FontSize="14"
+                IsChecked="{Binding CurrentConfig.ShowMessageWhenFinished}" />
+
+        </StackPanel>
+
+        <!--  Save & Cancel  -->
+        <StackPanel
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Orientation="Horizontal">
+
+            <Button
+                Command="{Binding CancelCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                Content="Cancel" />
+            <Button
+                Margin="5,0,0,0"
+                Command="{Binding SaveAndExitCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                Content="Save &amp; Exit" />
+
+        </StackPanel>
+
+    </Grid>
+
+</Window>

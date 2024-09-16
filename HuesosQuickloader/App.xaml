@@ -1,0 +1,24 @@
+﻿<Application
+    x:Class="HuesosQuickloader.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/HuesosQuickloader;component/Resources/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HuesosQuickloader;component/Resources/Fonts.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/HuesosQuickloader;component/Resources/SharedStyles/WindowStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HuesosQuickloader;component/Resources/SharedStyles/TextBlockStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HuesosQuickloader;component/Resources/SharedStyles/ButtonStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HuesosQuickloader;component/Resources/SharedStyles/IconImageStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HuesosQuickloader;component/Resources/SharedStyles/TextBoxStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HuesosQuickloader;component/Resources/SharedStyles/CheckBoxStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HuesosQuickloader;component/Resources/SharedStyles/ListViewStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HuesosQuickloader;component/Resources/SharedStyles/ScrollbarStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

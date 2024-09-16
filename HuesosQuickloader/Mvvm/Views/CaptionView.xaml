@@ -1,0 +1,88 @@
+﻿<Grid
+    x:Class="HuesosQuickloader.Mvvm.Views.CaptionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:HuesosQuickloader.Mvvm.ViewModels"
+    d:Background="{StaticResource MainWindowBackgroundColorBrush}"
+    d:DataContext="{d:DesignInstance Type=viewmodels:CaptionViewModel}"
+    d:DesignWidth="500"
+    mc:Ignorable="d">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger
+            EventName="StateChanged"
+            SourceObject="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
+
+            <i:InvokeCommandAction
+                Command="{Binding WindowStateChangedCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" />
+
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <!--  Left Side  -->
+    <StackPanel
+        HorizontalAlignment="Left"
+        VerticalAlignment="Center"
+        Orientation="Horizontal">
+
+        <TextBlock
+            VerticalAlignment="Center"
+            Text="HSQ Quickloader">
+
+            <TextBlock.Effect>
+                <DropShadowEffect
+                    BlurRadius="5"
+                    Opacity="0.75"
+                    ShadowDepth="0"
+                    Color="#FFFFFF" />
+            </TextBlock.Effect>
+
+        </TextBlock>
+
+        <Button
+            Width="25"
+            Margin="10,0,0,0"
+            Command="{Binding OpenSettingsCommand}"
+            Style="{StaticResource TransparentButton}">
+            <fa:IconImage Icon="Gear" />
+        </Button>
+
+    </StackPanel>
+
+    <!--  Caption Button  -->
+    <StackPanel
+        HorizontalAlignment="Right"
+        Orientation="Horizontal">
+
+        <Button
+            Width="35"
+            Height="35"
+            Command="{Binding ResizeCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+            Style="{StaticResource TransparentButton}">
+            <fa:IconImage
+                Margin="0"
+                Icon="{Binding CurrentResizeIcon, FallbackValue={x:Static fa:IconChar.SquarePlus}}"
+                IconFont="Regular" />
+        </Button>
+
+        <Button
+            Width="35"
+            Height="35"
+            Margin="5,0,0,0"
+            Command="{Binding CloseCommand}"
+            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+            Style="{StaticResource TransparentButton}">
+            <fa:IconImage
+                Icon="SquareXmark"
+                IconFont="Auto" />
+        </Button>
+
+    </StackPanel>
+
+</Grid>
